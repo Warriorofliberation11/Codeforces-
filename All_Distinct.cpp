@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        unordered_map<int,int> mp;
+        int cnt=0;
+        for(int i=0;i<n;i++)
+        {
+            int a;
+            cin>>a;
+            mp[a]++;
+        }
+        for(auto it: mp)
+        {
+            if(it.second>1)
+            cnt+=(it.second-1);
+        }
+        int op=(cnt+1)/2;
+        cout<<n-2*op<<endl;
+    }
+}
