@@ -8,13 +8,17 @@ int main()
     {
         int n;
         cin>>n;
-        int b=n/2,a=n/2-1,c=n-(a+b);
-        if(b<=c)
+        int c=n/3,a=c+1,b=n-(a+c);
+        if(b<=a)
         {
             b++;
-            a=(n-b+1)/2;
-            c=n-(a+b);
+            c--;
+            if(b<=a)
+            {
+                b++;
+                a--;
+            }
         }
-        cout<<a<<" "<<b<<" "<<n-(a+b)<<endl;
+        cout<<a<<" "<<b<<" "<<c<<endl;
     }
 }
