@@ -20,12 +20,17 @@ int main()
             cout<<1<<endl;
             continue;
         }
-        int total=0,ans=0,cnt=0;
-        bool add=true;
+        int total=0,ans=0;
+        vector<int> g;
         for(auto it:mp)
         {
-            if(total+it.second<=k)
-            total+=it.second;
+            g.push_back(it.second);
+        }
+        sort(g.begin(),g.end());
+        for(auto it: g)
+        {
+            if(total+it<=k)
+            total+=it;
             else
             ans++;
         }

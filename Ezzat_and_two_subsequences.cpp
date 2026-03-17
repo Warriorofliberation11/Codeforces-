@@ -9,14 +9,19 @@ int main()
     {
         int n;
         cin>>n;
-        double maxi=INT_MIN,sum=0;
+        double sum=0;
+        int maxi;
         for(int i=0;i<n;i++)
         {
-            double a;
+            int a;
             cin>>a;
+            if(i==0)
+            maxi=a;
+            else
             maxi=max(maxi,a);
-            sum+=a;
+            sum+=(double)a;
         }
-        cout<<(sum-maxi)/(n-1)+maxi<<endl;
+        sum-=maxi;
+        cout<<(sum/(double)(n-1))+maxi<<endl;
     }
 }
