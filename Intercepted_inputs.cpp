@@ -18,34 +18,21 @@ int main()
 
         for(int i = 0; i < k; i++)
         {
-            cin >> a[i];
-            freq[a[i]]++;
+            int a;
+            cin >> a;
+            freq[a]++;
         }
-
-        int target = k - 2;
-
+        int target=k-2;
         for(int i = 1; i * i <= target; i++)
         {
             if(target % i == 0)
             {
                 int n = i;
                 int m = target / i;
-
-                if(n == m)
+                if(freq[n]>=1 && freq[m]>=1)
                 {
-                    if(freq[n] >= 2)
-                    {
-                        cout << n << " " << m << "\n";
-                        break;
-                    }
-                }
-                else
-                {
-                    if(freq[n] >= 1 && freq[m] >= 1)
-                    {
-                        cout << n << " " << m << "\n";
-                        break;
-                    }
+                    cout<<n<<" "<<m<<endl;
+                    break;
                 }
             }
         }
