@@ -7,24 +7,16 @@ int main()
     while(t--)
     {
         int n;
-        cin>>n;
-        bool k=true;
-        int prev;
-        cin>>prev;
-        vector<bool> arr(n,false);
-        for(int i=1;i<n;i++)
+        cin >> n;
+        long long L = -1e18, R = 1e18;
+        for (int i = 0; i < n; i++) 
         {
-            int a;
-            cin>>a;
-            if(a-prev==2)
-            {
-                if(arr[i-1])
-            }
-            prev=a;
+            long long x;
+            cin >> x;
+            long long y = x - i;
+            L = max(L, y - 1);
+            R = min(R, y + 1);
         }
-        if(k)
-        cout<<"YES"<<endl;
-        else
-        cout<<"NO"<<endl;
+        cout << (L <= R ? "YES" : "NO") << endl;
     }
 }

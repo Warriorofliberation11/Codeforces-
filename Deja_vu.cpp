@@ -9,32 +9,29 @@ int main()
         string s;
         cin>>s;
         bool ispal=true;
-        for(int k=0;k<=s.size()/2;k++)
+        int i=0,j=s.size()-1,k=-1;
+        int n=s.size();
+        while(i<=j)
         {
-            string str=s;
-            str.insert(str.begin()+k,'a');
-            int i=0,j=str.size()-1;
-            bool check=true;
-            while(i<j)
+            if(s[i]!=s[j])
+            ispal=false;
+            if(k==-1)
             {
-                if(str[i]!=str[j])
-                {
-                    check=false;
-                    break;
-                }
-                i++;
-                j--;
+                if(s[j]!='a')
+                k=i;
+                else if(s[i]!='a')
+                k=j;
             }
-            if(!check)
-            {
-                s=str;
-                ispal=false;
-                break;
-            }
+            i++;
+            j--;
         }
-        if(!ispal)
-        cout<<"YES"<<endl<<s<<endl;
-        else
+        if(ispal && k==-1)
         cout<<"NO"<<endl;
+        else
+        {
+            cout<<"YES"<<endl;
+            s.insert(s.begin()+k,'a');
+            cout<<s<<endl;
+        }
     }
 }
