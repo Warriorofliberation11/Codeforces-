@@ -8,14 +8,17 @@ int main()
     {
         int n;
         cin>>n;
-        long long k=1,ans=0;
+        long long mini=INT_MAX,maxi=INT_MIN;
         for(int i=0;i<n;i++)
         {
             long long a;
             cin>>a;
-            ans+=max(0LL,a-k);
-            k=a+1;
+            maxi=max(maxi,a);
+            mini=min(mini,a);
         }
-        cout<<ans<<endl;
+        if(mini<0)
+        cout<<mini<<endl;
+        else
+        cout<<maxi<<endl;
     }
 }

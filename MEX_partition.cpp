@@ -8,14 +8,16 @@ int main()
     {
         int n;
         cin>>n;
-        long long k=1,ans=0;
+        unordered_map<int,int> mp;
         for(int i=0;i<n;i++)
         {
-            long long a;
+            int a;
             cin>>a;
-            ans+=max(0LL,a-k);
-            k=a+1;
+            mp[a]++;
         }
+        int ans=0;
+        while(mp[ans]!=0)
+        ans++;
         cout<<ans<<endl;
     }
 }

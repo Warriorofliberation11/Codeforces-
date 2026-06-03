@@ -14,7 +14,7 @@ int main()
             long long a;
             cin>>a;
             ans+=max(0LL,a-k);
-            k=a+1;
+            k=max(k+1,a+1);
         }
         cout<<ans<<endl;
     }
