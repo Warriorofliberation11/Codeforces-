@@ -1,21 +1,12 @@
-#include<bits/stdc++.h>
-using namespace std;
-int main()
-{
-    int t;
-    cin>>t;
-    while(t--)
-    {
-        int n;
-        cin>>n;
-        long long k=1,ans=0;
-        for(int i=0;i<n;i++)
+ if(st.size()>0)
         {
-            long long a;
-            cin>>a;
-            ans+=max(0LL,a-k);
-            k=a+1;
+            cout<<1<<endl;
+            cout<<st.size()<<" ";
+            vector<int> arr;
+            for(int it: st)
+            arr.push_back(it);
+            sort(arr.begin(),arr.end());
+            for(int it: arr)
+            cout<<it<<" ";
+            cout<<endl;
         }
-        cout<<ans<<endl;
-    }
-}
